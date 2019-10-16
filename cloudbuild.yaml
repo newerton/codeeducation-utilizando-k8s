@@ -1,7 +1,8 @@
 steps:
-  - name: "gcr.io/cloud-builders/go"
-    args: ["test", "repository/go"]
-    env: ["PROJECT_ROOT=repository"]
+  - id: go_test
+    name: "gcr.io/cloud-builders/go"
+    args: ["test", "webserver"]
+    env: ["GOPATH=go/."]
 
   - id: "Building image"
     name: "gcr.io/cloud-builders/docker"
