@@ -1,0 +1,18 @@
+steps:
+  - name: "gcr.io/cloud-builders/go"
+    args: ["test", "repository/go"]
+    env: ["PROJECT_ROOT=repository"]
+
+  - id: "Building image"
+    name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "build",
+        "--build-arg",
+        "version=0.0.1",
+        "-t",
+        "gcr.io/$PROJECT_ID/golang-ws:latest",
+        "./go",
+      ]
+images:
+  - "gcr.io/$PROJECT_ID/golang-ws:latest"
