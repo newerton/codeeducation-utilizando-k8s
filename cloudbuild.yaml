@@ -11,8 +11,8 @@ steps:
         "--build-arg",
         "version=0.0.1",
         "-t",
-        "gcr.io/$PROJECT_ID/golang-ws:latest",
+        "gcr.io/$PROJECT_ID/golang-webserver:latest",
         "./go",
       ]
 images:
-  - "gcr.io/$PROJECT_ID/golang-ws:latest"
+  - "gcr.io/$PROJECT_ID/golang-webserver:latest"
